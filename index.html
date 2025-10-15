@@ -1,0 +1,177 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ICMS Brasil — Guia Educativo</title>
+  <meta name="description" content="Guia educativo sobre ICMS: tipos, alíquotas, curiosidades e quiz interativo com explicações." />
+  <link rel="icon" href="assets/logo.svg" />
+  <style>
+    body { font-family: Arial, sans-serif; background:#f5f7fa; margin:0; padding-top:72px; color:#222 }
+    nav { position:fixed; top:0; left:0; right:0; background:#0077cc; z-index:1000; border-bottom:3px solid #005fa3 }
+    nav .wrap{ max-width:1100px; margin:0 auto; display:flex; align-items:center; gap:18px; padding:10px 18px }
+    nav img{ height:36px }
+    nav ul{ list-style:none; display:flex; gap:16px; margin:0; padding:0 4px; align-items:center }
+    nav a{ color:white; text-decoration:none; font-weight:700; padding:8px 10px; border-radius:6px }
+    nav a:hover{ background:#005fa3 }
+    main { max-width:1000px; margin:28px auto; padding:20px }
+    header.hero { text-align:center; margin-bottom:18px }
+    header.hero h1{ color:#0077cc; margin:6px 0 }
+    .grid{ display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:18px }
+    section.card{ background:white; border-radius:12px; padding:18px; box-shadow:0 6px 18px rgba(0,0,0,0.06) }
+    .card img.icon{ width:56px; height:56px }
+    table{ width:100%; border-collapse:collapse; margin-top:8px }
+    th, td{ border:1px solid #e6e6e6; padding:10px; text-align:left }
+    th{ background:#f1f1f1 }
+    .quiz-feedback{ margin-top:16px; font-weight:700; line-height:1.5 }
+    .correct{ color:green }
+    .incorrect{ color:red }
+    .explanation{ font-weight:normal; color:#444; display:block; margin-top:6px }
+    input, textarea{ width:100%; padding:10px; border:1px solid #ddd; border-radius:6px; box-sizing:border-box }
+    button{ background:#0077cc; color:white; border:none; padding:10px 14px; border-radius:8px; cursor:pointer }
+    button:hover{ background:#005fa3 }
+    footer{ text-align:center; padding:18px; color:#666; margin-top:20px }
+    html{ scroll-behavior:smooth }
+    @media(max-width:520px){ nav .wrap{ padding:8px } }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="wrap">
+      <img src="assets/logo.svg" alt="ICMS Brasil" />
+      <ul>
+        <li><a href="#intro">Início</a></li>
+        <li><a href="#oque-e-icms">O que é</a></li>
+        <li><a href="#tipos">Tipos</a></li>
+        <li><a href="#aliquotas">Alíquotas</a></li>
+        <li><a href="#curiosidades">Curiosidades</a></li>
+        <li><a href="#quiz">Quiz</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <header class="hero" id="intro">
+      <h1>ICMS Brasil — Guia Educativo</h1>
+      <p>Bem-vindo ao ICMS Brasil. Um guia prático com explicações, tabelas e um quiz para testar seu conhecimento.</p>
+    </header>
+
+    <div class="grid">
+      <section class="card" id="oque-e-icms">
+        <img class="icon" src="assets/nota.svg" alt="Nota fiscal" />
+        <h2>O que é o ICMS?</h2>
+        <p>O <strong>ICMS</strong> é o Imposto sobre Circulação de Mercadorias e Serviços — tributo estadual que incide sobre vendas, transporte e serviços de comunicação.</p>
+        <p>Ele é cobrado em várias etapas da cadeia e possui regras diferentes por estado.</p>
+      </section>
+
+      <section class="card" id="tipos">
+        <img class="icon" src="assets/grafico.svg" alt="Gráfico" />
+        <h2>Tipos de ICMS</h2>
+        <ul>
+          <li><strong>Interno:</strong> operações dentro do mesmo estado.</li>
+          <li><strong>Interestadual:</strong> entre estados diferentes.</li>
+          <li><strong>ICMS-ST:</strong> Substituição Tributária — imposto pago antecipadamente por um responsável da cadeia.</li>
+          <li><strong>DIFAL:</strong> diferencial de alíquota em vendas interestaduais ao consumidor final.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="aliquotas">
+        <img class="icon" src="assets/mapa.svg" alt="Mapa" />
+        <h2>Alíquotas</h2>
+        <table>
+          <thead><tr><th>Tipo</th><th>Alíquota</th><th>Observações</th></tr></thead>
+          <tbody>
+            <tr><td>Interno</td><td>17% a 18%</td><td>Depende do estado</td></tr>
+            <tr><td>Interestadual (Sul/Sudeste → N/NE/CO)</td><td>7%</td><td>Destinos em estados menos desenvolvidos</td></tr>
+            <tr><td>Interestadual (Sul/Sudeste → Sul/Sudeste)</td><td>12%</td><td>Entre estados mais desenvolvidos</td></tr>
+            <tr><td>Produtos supérfluos</td><td>25%+</td><td>Cigarros, bebidas alcoólicas, etc.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="card" id="curiosidades">
+        <h2>Curiosidades</h2>
+        <ul>
+          <li>Regras do ICMS variam bastante entre os estados.</li>
+          <li>Livros e medicamentos geralmente têm regimes especiais.</li>
+          <li>DIFAL foi criado para ajustar arrecadação em vendas interestaduais para consumidor final.</li>
+        </ul>
+      </section>
+    </div>
+
+    <!-- Quiz section -->
+    <section class="card" id="quiz">
+      <h2>Quiz Interativo</h2>
+      <form id="quiz-form">
+        <p><strong>1.</strong> Qual é a alíquota interna mais comum do ICMS?</p>
+        <label><input type="radio" name="q1" value="a"> 7%</label><br>
+        <label><input type="radio" name="q1" value="b"> 17% a 18%</label><br>
+        <label><input type="radio" name="q1" value="c"> 25%</label><br>
+
+        <p style="margin-top:12px"><strong>2.</strong> O que significa ICMS‑ST?</p>
+        <label><input type="radio" name="q2" value="a"> Substituição Tributária</label><br>
+        <label><input type="radio" name="q2" value="b"> Sistema Tributário</label><br>
+        <label><input type="radio" name="q2" value="c"> Subtração de Taxa</label><br>
+
+        <p style="margin-top:12px"><strong>3.</strong> Qual alíquota interestadual é usada de Sul/Sudeste para N/NE/CO?</p>
+        <label><input type="radio" name="q3" value="a"> 7%</label><br>
+        <label><input type="radio" name="q3" value="b"> 18%</label><br>
+        <label><input type="radio" name="q3" value="c"> 12%</label><br>
+
+        <button type="submit" id="submit-quiz">Enviar Respostas</button>
+      </form>
+
+      <div id="quiz-feedback" class="quiz-feedback"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 ICMS Brasil — Desenvolvido por ChatGPT</p>
+  </footer>
+
+  <script>
+    const quizForm = document.getElementById('quiz-form');
+    const feedback = document.getElementById('quiz-feedback');
+
+    const answers = {
+      q1: { correct: 'b', text: 'A alíquota interna mais comum é 17% a 18%.', why: 'As demais alternativas são alíquotas aplicadas em operações interestaduais ou produtos específicos.' },
+      q2: { correct: 'a', text: 'ICMS‑ST significa Substituição Tributária (antecipação do imposto).', why: 'Não é “Sistema Tributário” nem “Subtração de Taxa”; refere-se ao regime de antecipação por um contribuinte da cadeia.' },
+      q3: { correct: 'a', text: 'A alíquota interestadual para N/NE/CO é 7%.', why: '7% é a alíquota aplicada a destinos em regiões menos desenvolvidas; 12% é entre Sul/Sudeste e 18% seria alíquota interna.' }
+    };
+
+    quizForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let score = 0;
+      let out = '';
+      const total = Object.keys(answers).length;
+
+      for (const q in answers) {
+        const el = quizForm.elements[q];
+        const selected = el && el.value;
+        if (!selected) {
+          feedback.innerHTML = "<span class='incorrect'>⚠️ Responda todas as perguntas antes de enviar.</span>";
+          return;
+        }
+        if (selected === answers[q].correct) {
+          score++;
+          out += `<div class="correct">✅ Questão ${q.slice(1)}: Correta.<span class="explanation">${answers[q].text}</span></div>`;
+        } else {
+          out += `<div class="incorrect">❌ Questão ${q.slice(1)}: Errada.<br><strong>Resposta correta:</strong> ${answers[q].text}<span class="explanation">💡 Por que a sua resposta estava errada: ${answers[q].why}</span></div>`;
+        }
+      }
+
+      out += `<br><strong>Você acertou ${score} de ${total} perguntas.</strong><br>`;
+      out += score === total ? "🎉 Parabéns, você domina o assunto!" : score >= total/2 ? "👍 Bom trabalho, continue estudando!" : "📘 Que tal revisar o conteúdo para melhorar?";
+
+      feedback.innerHTML = out;
+
+      // retry button
+      const btn = document.createElement('button');
+      btn.textContent = '🔁 Tentar novamente';
+      btn.addEventListener('click', function() { quizForm.reset(); feedback.innerHTML=''; });
+      feedback.appendChild(btn);
+    });
+  </script>
+</body>
+</html>
